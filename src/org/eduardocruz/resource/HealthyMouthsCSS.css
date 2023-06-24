@@ -1,0 +1,171 @@
+.menu-bar {
+    -fx-background-color: #2E2E2E ;
+    -fx-opacity: 1.0;
+    -fx-border-width: 2.0;
+
+}
+.menu-bar .label {
+    -fx-font-size: 12.0 pt;
+    -fx-font-family: "Impact";
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+    -fx-padding: 5.0px;
+
+}
+.menu-bar .menu-button:hover, .menu-bar .menu-button:focused, .menu-bar .menu-button:showing {
+    -fx-background: #1D1C1D ;
+    -fx-opacity: 1.0;
+    -fx-text-fill: white;
+}
+
+.menu-item {
+    -fx-padding: 0.0em 0.0em 0.0em 0.0em;
+    -fx-text-fill: black;
+    -fx-background: darkgray ;
+}
+.menu-item .label{
+    -fx-font-size: 12.0 pt;
+    -fx-text-fill: white;
+}
+.menu-item .label:hover{
+    -fx-font-size: 12.0 pt;
+    -fx-background: #1D1C1D ;
+    -fx-text-fill: white;
+}
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-background-color:#424343 ;
+    -fx-border-width: 0.2px;
+    -fx-border-color: black;
+    -fx-background-insets: 0.0, 1.0, 2.0;
+    -fx-background-radius: 0 0 4 4;
+    -fx-opacity: 0.9;
+}
+
+
+
+.button1{
+    -fx-background-color: #2F2F2E;
+}
+.button1:hover{
+    -fx-background-color: #424343;
+}
+.button1:pressed{
+    -fx-background-color: #6F6F6E;
+}
+
+.button2{
+    -fx-background-color: #3B3B3B;
+}
+.button2:hover{
+    -fx-background-color: #424343;
+}
+.button2:pressed{
+    -fx-background-color: #6F6F6E;
+}
+
+
+
+.table-view {
+    -fx-background-color: transparent;
+}
+.table-view .corner {
+    -fx-background-color: transparent;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom, #2F2E2F, #424343);
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header .label{
+    -fx-font-size: 14.0 pt;
+    -fx-font-family: "Impact";
+    -fx-text-fill: white;
+    -fx-font-weight: bold; 
+    -fx-padding: 5.0px;
+    -fx-alignment: center;
+}
+.table-view .column-header {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell{
+    -fx-font-size: 12.0 pt;
+    -fx-font-family: "Impact";
+    -fx-text-background-color: #cccccc;
+    -fx-font-weight: bold; 
+    -fx-padding: 5.0px;
+}
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+    -fx-background-radius: 0px 0px 7px 7px;
+}
+.table-row-cell:hover {
+    -fx-background-color: #A5A4A5;
+    -fx-text-background-color: white;
+}
+.table-row-cell:odd{
+    -fx-background-color: rgba(139, 139, 139, 0.4);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell:even{
+    -fx-background-color: rgba(90, 90, 90, 0.4);
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom, #585959, #434342);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right, #585959, #434342);
+}
+
+.combo-box-base{
+    -fx-background-color: #595859;
+}
+.combo-box .list-cell{
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Impact";
+}
+.combo-box-popup .list-cell{
+    -fx-background-color: #595859;
+    -fx-text-fill: #cccccc;
+}
+.combo-box-popup .list-cell:hover{
+    -fx-background-color: #424343;
+}
+.combo-box-popup .list-cell:pressed{
+    -fx-background-color: #6F6F6E;
+}
+
+.text-field{
+    -fx-background-color: #595859;
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Impact";
+}
+
+.text-field:focused{
+    -fx-border-color: #5982FB;
+    
+}
+
+.text-field1{
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Impact";
+}

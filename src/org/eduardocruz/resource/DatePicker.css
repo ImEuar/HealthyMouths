@@ -1,0 +1,118 @@
+.root
+{
+    /*-fx-base: dodgerblue; */
+    -fx-background-color: #595859;
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Impact";
+}
+.text-field{
+    -fx-background-color: #595859;
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Impact";
+    -fx-pref-height: 25px;
+    -fx-prompt-text-fill: #8c8c8c;
+}
+.ui-datepicker{
+    -fx-background-color: #595859;
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Impact";
+}
+.datepicker-invalid
+{
+    -fx-border-color: red;
+}
+.datepicker-valid
+{
+    -fx-border-color: null;
+}
+/* The main calendar pane */
+.calendar {
+
+}
+.calendar-header
+{
+    -fx-background-color: #3B3B3B;
+    -fx-padding: 0.5em;
+    -fx-background-radius: 10 10 0 0;
+    -fx-font-family: "Impact";
+    -fx-text-fill: #cccccc;
+}
+.calendar-footer
+{
+    -fx-background-color: #3B3B3B;
+    -fx-padding: 0.5em;
+    -fx-background-radius: 0 0 10 10;
+    -fx-font-family: "Impact";
+    -fx-text-fill: #cccccc;
+}
+.calendar-month-view, .calendar-year-view, .calendar-decades-view
+{
+    -fx-background-color: #595959;
+    -fx-padding: 0;
+    -fx-font-family: "Impact";
+    -fx-text-fill: #cccccc;
+}
+.calendar-cell-current-month, .calendar-year-button, .calendar-month-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-text-fill: #cccccc;
+}
+.calendar-cell-current-month:hover, .calendar-year-button:hover, .calendar-month-button:hover {
+    -fx-background-color: #808080;
+}
+.calendar-cell-current-month:pressed, .calendar-year-button:pressed, .calendar-month-button:pressed {
+    -fx-background-color: #bfbfbf;
+}
+.calendar-cell-other-month {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0, 0, 0, 0;
+    -fx-cursor: hand;
+    -fx-padding: 0.7em;
+    -fx-background-radius: 8;
+    -fx-text-fill: #999999;
+}
+.calendar-cell-other-month:hover {
+    -fx-background-color: #808080;
+}
+.calendar-cell-other-month:pressed {
+    -fx-background-color: #bfbfbf;
+}
+.calendar-cell-today {
+     -fx-background-color: #8c8c8c;
+}
+
+/* The buttons in the header and the footer */
+.calendar-navigation-button, .calendar-navigation-title, .calendar-today-button {
+    -fx-background-color: null;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+/* don't make the title button transparent, when it is disabled in the decades view */
+.calendar-navigation-title:disabled {
+    -fx-opacity: 1;
+}
+
+/* The arrow for navigation. SVG is used for it. */
+.calendar-navigation-arrow {
+    /*padding determines the size of the arrow; This should match the design size in the SVG */
+    -fx-padding: 4 3.5 4 3.5;
+    -fx-padding: 0.333333em 0.333333em 0.333333em 0.333333em; /* 2 3.5 2 3.5 */
+    -fx-shape: "M 100 100 L 300 100 L 200 300 z";
+    -fx-background-color: #ffffff;
+}
+.calendar-weekdays {
+    -fx-background-color: #4d4d4d;
+    -fx-padding: 3px;
+    -fx-text-fill: #cccccc;
+}
+.calendar-week-number {
+    -fx-font-size: 0.8em;
+    -fx-padding: 4px;
+}

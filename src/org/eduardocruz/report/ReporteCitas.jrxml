@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteCitas" language="groovy" pageWidth="752" pageHeight="572" orientation="Landscape" columnWidth="752" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2915050a-2fbe-42b6-8913-7e3958e26e44">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="fondo" class="java.io.InputStream"/>
+	<parameter name="icono" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select concat(P.nombresPaciente, ' ', P.apellidosPaciente) as paciente, concat(D.nombresDoctor, ' ', D.apellidosDoctor) as doctor, date_format(C.horaCita, "%H:%i") as horaCita, C.tratamiento, C.descCActual, date_format(C.fechaCita, "%Y - %m - %d") as fechaCita from Citas C inner join Pacientes P on C.codigoPaciente = P.codigoPaciente inner join Doctores D on C.numeroColegiado = D.numeroColegiado;]]>
+	</queryString>
+	<field name="paciente" class="java.lang.String"/>
+	<field name="doctor" class="java.lang.String"/>
+	<field name="horaCita" class="java.lang.String"/>
+	<field name="tratamiento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descCActual" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fechaCita" class="java.lang.String"/>
+	<background>
+		<band height="572" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="0" width="752" height="572" uuid="a1771643-32e4-4e22-bff2-5a5651c6b75b"/>
+				<imageExpression><![CDATA[$P{fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="115" splitType="Stretch">
+			<image onErrorType="Blank">
+				<reportElement x="275" y="53" width="67" height="62" uuid="11f4db9d-ea05-47ae-818f-83ff605fae6e"/>
+				<imageExpression><![CDATA[$P{icono}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="357" y="53" width="122" height="62" forecolor="#4D5A77" uuid="ffbb3fe0-5348-4ede-b158-92c0f0471118"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Impact" size="30" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Citas]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="2d60ad20-39a1-4588-ad34-172146f3774a"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="59" height="20" uuid="10c01d34-6ea4-40a0-8fa1-8d3ff8aa2762"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Hora]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="0" width="100" height="20" uuid="d4aeca7d-2e0e-4310-be9b-47c31ba51281"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Tratamiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="100" height="20" uuid="dab187a3-724f-4c89-81d8-5d90f57cc3bb"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Condición Actual]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="604" y="0" width="100" height="20" uuid="a394f908-1332-4d67-b5a4-0361c88b1786"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Doctor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="0" width="100" height="20" uuid="33a76ed3-9a9b-4476-ba7e-321bca8fb877"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Paciente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="22538c8c-c8a8-4ed2-8ae8-80380779ce84"/>
+				<textFieldExpression><![CDATA[$F{fechaCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="1" width="59" height="20" uuid="2d2e3910-f46d-48cd-b8fa-ed4609d77035"/>
+				<textFieldExpression><![CDATA[$F{horaCita}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="1" width="100" height="20" uuid="f1cd28b9-509f-4744-a330-1959681a1d61"/>
+				<textFieldExpression><![CDATA[$F{tratamiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="1" width="146" height="20" uuid="f9dd2daf-7b73-490b-a457-0d02b31e4e08"/>
+				<textFieldExpression><![CDATA[$F{descCActual}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="0" width="157" height="20" uuid="15ed6f61-33fc-4d59-9abc-f9324b343c33"/>
+				<textFieldExpression><![CDATA[$F{paciente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="604" y="0" width="148" height="20" uuid="81cef8c2-91f4-45f8-807d-591991bf0da2"/>
+				<textFieldExpression><![CDATA[$F{doctor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

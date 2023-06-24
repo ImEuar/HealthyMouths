@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteRecetas" language="groovy" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="88210bdd-9c3d-4dfa-ae4a-9e3a39318fb9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<parameter name="fondo" class="java.io.InputStream"/>
+	<parameter name="icono" class="java.io.InputStream"/>
+	<queryString>
+		<![CDATA[select concat(D.nombresDoctor, ' ', D.apellidosDoctor) as doctor, R.fechaReceta, R.codigoReceta from Recetas R inner join Doctores D on R.numeroColegiado = D.numeroColegiado;]]>
+	</queryString>
+	<field name="doctor" class="java.lang.String"/>
+	<field name="fechaReceta" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoReceta" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="c0ae0194-1631-45db-833f-c698f113f598"/>
+				<imageExpression><![CDATA[$P{fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="142" splitType="Stretch">
+			<staticText>
+				<reportElement x="251" y="80" width="112" height="62" forecolor="#4D5A77" uuid="953f0e00-b59a-4a23-8e96-c37f3da3dd3f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Impact" size="30" isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Recetas]]></text>
+			</staticText>
+			<image>
+				<reportElement x="175" y="80" width="59" height="62" uuid="4527fab8-80fc-466c-bc2f-391e20097d23"/>
+				<imageExpression><![CDATA[$P{icono}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="19" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="f86fe7b0-c2d9-48a8-8b4a-ba8e7c853bc0"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[No. de receta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="217" y="0" width="100" height="20" uuid="3b0090ee-e17b-47a7-a6ab-2cd8e32b434d"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="418" y="3" width="100" height="20" uuid="4e6384de-5702-4ad6-ade2-89e7d1025ba7"/>
+				<textElement>
+					<font fontName="Impact" size="12"/>
+				</textElement>
+				<text><![CDATA[Doctor]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="0e9f3e67-8486-4091-89ff-1bcd57652a40"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{codigoReceta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="418" y="2" width="154" height="20" uuid="33f2466f-f84e-413b-8ee6-0833a8a79fdc"/>
+				<textFieldExpression><![CDATA[$F{doctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="217" y="0" width="100" height="20" uuid="12250050-45bb-4736-a157-9dd3a20072ae"/>
+				<textFieldExpression><![CDATA[$F{fechaReceta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
